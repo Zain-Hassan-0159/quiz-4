@@ -536,11 +536,12 @@
 
                 <div class="custom-form" style="margin: 40px 0 0;">
                     <div class="custom-form-slide active">
-                        <p class="p1">Créer votre compte</p>
+                        <p class="p1">Konto erstellen</p>
                         <p class="p2">
-                            Pour compléter l'inscription, une vérification par téléphone
-                            est requise. Le numéro de téléphone sera utilisé pour
-                            vérifier le compte.
+                            Zur Fertigstellung der Registrierung ist eine 
+                            Telefonverifizierung erforderlich. Die 
+                            Telefonnummer wird zur Überprüfung des 
+                            Kontos verwendet.
                         </p>
                     </div>
                     <div class="gaff2" id="caff">
@@ -696,6 +697,30 @@
 
     <!-- Custom js -->
     <script src="assets/js/custom.js"></script>
+
+
+    <script>
+        // Function to change placeholder with a delay
+        function changePlaceholderWithRetry() {
+            const firstNameInput = document.getElementById("firstName");
+            const lastNameInput = document.getElementById("lastName");
+            const submitBtn = document.getElementById("submitBtn");
+            
+            if (firstNameInput) {
+                firstNameInput.placeholder = "Vorname";
+                lastNameInput.placeholder = "Nachname";
+                submitBtn.innerHTML = "Jetzt registrieren";
+            } else {
+                // Retry every 100 milliseconds until the element is found
+                setTimeout(changePlaceholderWithRetry, 100);
+            }
+        }
+    
+        // Start the process when the DOM content is fully loaded
+        document.addEventListener("DOMContentLoaded", function() {
+            changePlaceholderWithRetry();
+        });
+    </script>
     
 </body>
 </html>
