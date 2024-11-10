@@ -1,0 +1,106 @@
+/* large screens */
+@media (min-width: 1600px)
+{
+
+}
+
+
+@media (max-width: 1500px)
+{
+    .avatar
+    {
+        display: none;
+    }
+    form
+    {
+        width: 55%;
+    }
+    .quiz-question
+    {
+        font-size: 35px;
+    }
+}
+
+
+/* Desktops/Laptops */
+@media (max-width: 1200px)
+{
+    form
+    {
+        width: 70%;
+    }
+}
+
+/* Laptops */
+@media (max-width: 1024px)
+{
+
+}
+
+/* Tablets */
+@media (max-width: 768px)
+{
+    form
+    {
+        width: 100%;
+    }
+    .quiz-question
+    {
+        font-size: 25px;
+    }
+}
+
+/* mobile */
+@media (max-width: 576px)
+{
+    body
+    {
+        padding: 0;
+    }
+    main
+    {
+        padding: 0;
+    }
+    form
+    {
+        padding: 0 20px;
+    }
+    fieldset
+    {
+        width: 100%;
+    }
+    .step-number
+    {
+        font-size: 12px;
+    }
+    .quiz-question
+    {
+        font-size: 17px;
+    }
+    .radio-field
+    {
+        height: 50px;
+    }
+    .radio-field input
+    {
+        border-width: 2px;
+    }
+    .radio-field label
+    {
+        font-size: 16px;
+    }
+    .next-prev
+    {
+        position: static;
+        margin-top: 50px;
+    }
+    .next-prev button
+    {
+        width: 100%;
+        font-size: 13px;
+    }
+    .radio-field input:checked::before
+    {
+        display: none;
+    }
+}
