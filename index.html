@@ -6,699 +6,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
 
-    <link href="assets/flow.css" rel="stylesheet" />
-    <link href="assets/funnel.css" rel="stylesheet" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- fonts -->
+    <link rel="stylesheet" href="assets/fonts/font.css">
+    <!-- bootstrap 5 -->
+    <link rel="stylesheet" href="assets/css/Bootstrap/bootstrap.min.css">
     <style>
-        @media all and (min-width: 768px) {
-            .how-it-works-section {
-                margin-top: 300px;
-            }
+        /*! CSS Used from: http://127.0.0.1:5500/assets/funnel.css */
+        *,:after,:before{box-sizing:border-box;}
+        h1{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2;font-size:calc(1.375rem + 1.5vw);}
+        @media (min-width:1200px){
+        h1{font-size:2.5rem;}
+        }
+        p{margin-top:0;}
+        p{margin-bottom:1rem;}
+        a{color:var(--bs-link-color);text-decoration:underline;}
+        a:hover{color:var(--bs-link-hover-color);}
+        /*! CSS Used from: http://127.0.0.1:5500/assets/css/Bootstrap/bootstrap.min.css */
+        *,::after,::before{box-sizing:border-box;}
+        h1,h4{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2;color:var(--bs-heading-color,inherit);}
+        h1{font-size:calc(1.375rem + 1.5vw);}
+        @media (min-width:1200px){
+        h1{font-size:2.5rem;}
+        }
+        h4{font-size:calc(1.275rem + .3vw);}
+        @media (min-width:1200px){
+        h4{font-size:1.5rem;}
+        }
+        p{margin-top:0;margin-bottom:1rem;}
+        a{color:rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));text-decoration:underline;}
+        a:hover{--bs-link-color-rgb:var(--bs-link-hover-color-rgb);}
+        /*! CSS Used from: http://127.0.0.1:5500/assets/css/style.css */
+        body{
+            background-repeat: repeat;
+            color: white;
+            background-image:url(assets/images/bg-3.jpeg);background-size:contain;background-position:top center;height:100%;position:relative;padding:0px 0 80px 0;}
+        h1{margin-top:80px; margin-bottom: 40px;
+        text-align: center;
+        }
+        main{
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        h4{
+            text-align: center;
+            color: #222;
         }
 
-        .form-footer {
-            padding-top: 20px;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 150%;
-            color: #222;
-            font-family: Roboto, sans-serif;
+        main a{
+            color: white !important;
+            background-color: rgb(2 17 15 / 53%) !important;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            margin: 10px 0;
+            border: 1px solid white;
         }
     </style>
 
-    <!-- fonts -->
-    <link rel="stylesheet" href="assets/fonts/font.css">
 
-    <!-- fontawesome 5 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
-
-    <!-- bootstrap 5 -->
-    <link rel="stylesheet" href="assets/css/Bootstrap/bootstrap.min.css">
-
-    <!-- Custom Css Files -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    <link rel="stylesheet" href="assets/css/animation.css">
-
-    <!--Thankyou CSS-->
-    <link rel="stylesheet" href="assets/css/thankyou.css">
 </head>
 <body>
 
     <main>
-        <header class="step-bar">
-            <div class="fill">
-                
-            </div>
-        </header>
+        <h1>Willkommen!</h1>
+        <p>
+            Die Nachfrage nach Gain-AI ist seit 
+            unserem Start in Deutschland sehr hoch, 
+            daher können wir nur eine begrenzte 
+            Anzahl neuer Nutzer aufnehmen.
+        </p>
+        <p>
+            Bitte füllen Sie den 
+            Qualifikationsfragebogen aus. So können 
+            wir Ihre Bedürfnisse besser verstehen 
+            und Ihnen die bestmögliche Erfahrung 
+            bieten.
+        </p>
 
-        <!-- form -->
-        <form method="post" class="show-section">
+        <h4>Bitte wählen Sie:</h4>
 
-            <!-- section 1 -->
-            <section class="steps">
+        <a href="questions.html">PERSÖNLICHE LIZENZ - KOSTENLOS. <br><br>
+            Ich möchte Gain-AI nur für mich 
+            selbst nutzen.</a>
+        <a href="questions.html">UNTERNEHMENSLIZENZ - 25.000€ <br><br>
+            Bis zu 30 Benutzer</a>
 
-                <!-- step number -->
-                <!-- <div class="step-number">
-                    Question 1 / 5
-                </div> -->
-
-                <!-- Question -->
-                <h1 class="quiz-question">
-                    Wie viel Erfahrung haben Sie im Handel mit den Märkten?
-                </h1>
-
-                <!-- fields -->
-                <fieldset id="step1">
-                    <div class="radio-field bounce-left">
-                        <input type="radio" name="op1" value="Keine, ich bin ein kompletter Anfänger.">
-                        <label>Keine, ich bin ein kompletter Anfänger.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-100">
-                        <input type="radio" name="op1" value="Ein wenig, ich habe schon ein paar Mal gehandelt.">
-                        <label>Ein wenig, ich habe schon ein paar Mal gehandelt.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-200">
-                        <input type="radio" name="op1" value="Mittel, ich handle gelegentlich.">
-                        <label>Mittel, ich handle gelegentlich.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-300">
-                        <input type="radio" name="op1" value="Umfangreich, ich bin ein erfahrener Trader.">
-                        <label>Umfangreich, ich bin ein erfahrener Trader.</label>
-                    </div>
-                </fieldset>
-
-                <!-- next previous button
-                <footer class="next-prev">
-                    <button class="next" id="step1btn" type="button">
-                        Next Question
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </footer> -->
-            </section>
-
-            <!-- section 2 -->
-            <section class="steps">
-
-                <!-- step number -->
-                <!-- <div class="step-number">
-                    Question 2 / 5
-                </div> -->
-
-                <!-- Question -->
-                <h1 class="quiz-question">
-                    Wie vertraut fühlen Sie sich mit einem bewährten automatisierten Handelssystem?
-                </h1>
-
-                <!-- fields -->
-                <fieldset id="step2">
-                    <div class="radio-field bounce-left">
-                        <input type="radio" name="op2" value="Sehr vertraut, ich vertraue der Automatisierung.">
-                        <label>Sehr vertraut, ich vertraue der Automatisierung.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-100">
-                        <input type="radio" name="op2" value="Etwas vertraut, aber ich könnte Anleitung benötigen.">
-                        <label>Etwas vertraut, aber ich könnte Anleitung benötigen.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-200">
-                        <input type="radio" name="op2" value="Neutral, ich bin offen, mehr darüber zu lernen.">
-                        <label>Neutral, ich bin offen, mehr darüber zu lernen.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-300">
-                        <input type="radio" name="op2" value="Unwohl, ich bevorzuge manuelle Kontrolle.">
-                        <label>Unwohl, ich bevorzuge manuelle Kontrolle.</label>
-                    </div>
-                </fieldset>
-
-                <!-- next previous button
-                <footer class="next-prev">
-                    <button class="prev" type="button">
-                        <i class="fa-solid fa-arrow-left"></i>
-                        Previous Question
-                    </button>
-                    <button class="next" id="step2btn" type="button">
-                        Next Question
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </footer> -->
-            </section>
-
-            <!-- section 3 -->
-            <section class="steps">
-
-                <!-- step number -->
-                <!-- <div class="step-number">
-                    Question 3 / 5
-                </div> -->
-
-                <!-- Question -->
-                <h1 class="quiz-question">
-                    Mit wie viel Kapital fühlen Sie sich wohl, um zu starten?
-                </h1>
-
-                <!-- fields -->
-                <fieldset id="step3">
-                    <div class="radio-field  bounce-left">
-                        <input type="radio" name="op3" value="Unter 500 $">
-                        <label>Unter 500 $</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-100">
-                        <input type="radio" name="op3" value="500 $ - 1.000 $">
-                        <label>500 $ - 1.000 $</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-200">
-                        <input type="radio" name="op3" value="1.000 $ - 2.500 $">
-                        <label>1.000 $ - 2.500 $</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-300">
-                        <input type="radio" name="op3" value="Über 2.500 $">
-                        <label>Über 2.500 $</label>
-                    </div>
-                </fieldset>
-
-                <!-- next previous button
-                <footer class="next-prev">
-                    <button class="prev" type="button">
-                        <i class="fa-solid fa-arrow-left"></i>
-                        Previous Question
-                    </button>
-                    <button class="next" id="step3btn" type="button">
-                        Next Question
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </footer> -->
-            </section>
-
-            <!-- section 4 -->
-            <section class="steps">
-
-                <!-- step number -->
-                <!-- <div class="step-number">
-                    Question 4 / 5
-                </div> -->
-
-                <!-- Question -->
-                <h1 class="quiz-question">
-                    Wie schnell möchten Sie Ergebnisse aus Ihrem Handel sehen?
-                </h1>
-
-                <!-- fields -->
-                <fieldset id="step4">
-                    <div class="radio-field bounce-left">
-                        <input type="radio" name="op4" value="Ich bin geduldig, langfristiges Wachstum ist in Ordnung.">
-                        <label>Ich bin geduldig, langfristiges Wachstum ist in Ordnung.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-100">
-                        <input type="radio" name="op4" value="Innerhalb weniger Monate.">
-                        <label>Innerhalb weniger Monate.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-200">
-                        <input type="radio" name="op4" value="Innerhalb weniger Wochen.">
-                        <label>Innerhalb weniger Wochen.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-300">
-                        <input type="radio" name="op4" value="Täglich. Ich bevorzuge kurzfristige Gewinne.">
-                        <label>Täglich. Ich bevorzuge kurzfristige Gewinne.</label>
-                    </div>
-                </fieldset>
-
-                <!-- next previous button
-                <footer class="next-prev">
-                    <button class="prev" type="button">
-                        <i class="fa-solid fa-arrow-left"></i>
-                        Previous Question
-                    </button>
-                    <button class="next" id="step4btn" type="button">
-                        Next Question
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </footer> -->
-            </section>
-
-            <!-- section 5 -->
-            <section class="steps">
-
-                <!-- step number -->
-                <!-- <div class="step-number">
-                    Question 5 / 5
-                </div> -->
-
-                <!-- Question -->
-                <h1 class="quiz-question">
-                    Was ist Ihr Hauptziel beim automatisierten Handel?
-                </h1>
-
-                <!-- fields -->
-                <fieldset id="step5">
-                    <div class="radio-field  bounce-left">
-                        <input type="radio" name="op5" value="Über das Trading lernen, mit minimalem Risiko.">
-                        <label>Über das Trading lernen, mit minimalem Risiko.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-100">
-                        <input type="radio" name="op5" value="Ein regelmäßiges Zusatzeinkommen erzielen.">
-                        <label>Ein regelmäßiges Zusatzeinkommen erzielen.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-200">
-                        <input type="radio" name="op5" value="Erhebliche Gewinnsteigerung erreichen.">
-                        <label>Erhebliche Gewinnsteigerung erreichen.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-300">
-                        <input type="radio" name="op5" value="Rendite maximieren und möglicherweise ein Vermögen machen.">
-                        <label>Rendite maximieren und möglicherweise ein Vermögen machen.</label>
-                    </div>
-                </fieldset>
-
-                <!-- next previous button
-                <footer class="next-prev">
-                    <button class="prev" type="button">
-                        <i class="fa-solid fa-arrow-left"></i>
-                        Previous Question
-                    </button>
-                    <button class="next" id="sub" type="button">
-                        Submit
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </footer> -->
-            </section>
-
-            <!-- section 6 -->
-            <section class="steps">
-
-                <!-- step number -->
-                <!-- <div class="step-number">
-                    Question 5 / 5
-                </div> -->
-
-                <!-- Question -->
-                <h1 class="quiz-question">
-                    Wie wohl fühlen Sie sich im Umgang mit neuer Technologie?
-                </h1>
-
-                <!-- fields -->
-                <fieldset id="step6">
-                    <div class="radio-field  bounce-left">
-                        <input type="radio" name="op6" value="Sehr wohl, ich liebe neue Technik!">
-                        <label>Sehr wohl, ich liebe neue Technik!</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-100">
-                        <input type="radio" name="op6" value="Etwas wohl, aber ich könnte Unterstützung brauchen.">
-                        <label>Etwas wohl, aber ich könnte Unterstützung brauchen.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-200">
-                        <input type="radio" name="op6" value="Neutral, ich komme mit Anleitung zurecht.">
-                        <label>Neutral, ich komme mit Anleitung zurecht.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-300">
-                        <input type="radio" name="op6" value="Unwohl, ich bevorzuge Einfachheit.">
-                        <label>Unwohl, ich bevorzuge Einfachheit.</label>
-                    </div>
-                </fieldset>
-
-                <!-- next previous button
-                <footer class="next-prev">
-                    <button class="prev" type="button">
-                        <i class="fa-solid fa-arrow-left"></i>
-                        Previous Question
-                    </button>
-                    <button class="next" id="sub" type="button">
-                        Submit
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </footer> -->
-            </section>
-
-            <!-- section 7 -->
-            <section class="steps">
-
-                <!-- step number -->
-                <!-- <div class="step-number">
-                    Question 5 / 5
-                </div> -->
-
-                <!-- Question -->
-                <h1 class="quiz-question">
-                    Was begeistert Sie am meisten an der Nutzung eines KI-Handelsbots?
-                </h1>
-
-                <!-- fields -->
-                <fieldset id="step7">
-                    <div class="radio-field  bounce-left">
-                        <input type="radio" name="op7" value="Das Potenzial, mühelos Geld zu verdienen.">
-                        <label>Das Potenzial, mühelos Geld zu verdienen.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-100">
-                        <input type="radio" name="op7" value="Mehr über die Funktionsweise des Handels zu lernen.">
-                        <label>Mehr über die Funktionsweise des Handels zu lernen.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-200">
-                        <input type="radio" name="op7" value="Die fortschrittliche Technologie und Automatisierung.">
-                        <label>Die fortschrittliche Technologie und Automatisierung.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-300">
-                        <input type="radio" name="op7" value="Den Stress bei Handelsentscheidungen zu reduzieren.">
-                        <label>Den Stress bei Handelsentscheidungen zu reduzieren.</label>
-                    </div>
-                </fieldset>
-
-                <!-- next previous button
-                <footer class="next-prev">
-                    <button class="prev" type="button">
-                        <i class="fa-solid fa-arrow-left"></i>
-                        Previous Question
-                    </button>
-                    <button class="next" id="sub" type="button">
-                        Submit
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </footer> -->
-            </section>
-
-            <!-- section 5 -->
-            <section class="steps">
-
-                <!-- step number -->
-                <!-- <div class="step-number">
-                    Question 5 / 5
-                </div> -->
-
-                <!-- Question -->
-                <h1 class="quiz-question">
-                    Wie planen Sie, die Gewinne aus dem Handel zu verwenden?
-                </h1>
-
-                <!-- fields -->
-                <fieldset id="step8">
-                    <div class="radio-field  bounce-left">
-                        <input type="radio" name="op8" value="Für schlechte Zeiten sparen.">
-                        <label>Für schlechte Zeiten sparen.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-100">
-                        <input type="radio" name="op8" value="Mein aktuelles Einkommen ergänzen.">
-                        <label>Mein aktuelles Einkommen ergänzen.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-200">
-                        <input type="radio" name="op8" value="Reinvestieren, um mehr Wohlstand aufzubauen.">
-                        <label>Reinvestieren, um mehr Wohlstand aufzubauen.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-300">
-                        <input type="radio" name="op8" value="Ein bestimmtes Ziel oder einen Traum finanzieren.">
-                        <label>Ein bestimmtes Ziel oder einen Traum finanzieren.</label>
-                    </div>
-                </fieldset>
-
-                <!-- next previous button
-                <footer class="next-prev">
-                    <button class="prev" type="button">
-                        <i class="fa-solid fa-arrow-left"></i>
-                        Previous Question
-                    </button>
-                    <button class="next" id="sub" type="button">
-                        Submit
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </footer> -->
-            </section>
-
-            <!-- section 5 -->
-            <section class="steps">
-
-                <!-- step number -->
-                <!-- <div class="step-number">
-                    Question 5 / 5
-                </div> -->
-
-                <!-- Question -->
-                <h1 class="quiz-question">
-                    Was schätzen Sie am meisten an einem KI-Handelsbot?
-                </h1>
-
-                <!-- fields -->
-                <fieldset id="step9">
-                    <div class="radio-field  bounce-left">
-                        <input type="radio" name="op9" value="Benutzerfreundlichkeit.">
-                        <label>Benutzerfreundlichkeit.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-100">
-                        <input type="radio" name="op9" value="Hohe Rentabilität.">
-                        <label>Hohe Rentabilität.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-200">
-                        <input type="radio" name="op9" value="Geringes Risiko.">
-                        <label>Geringes Risiko.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-300">
-                        <input type="radio" name="op9" value="Erweiterte Funktionen und Flexibilität.">
-                        <label>Erweiterte Funktionen und Flexibilität.</label>
-                    </div>
-                </fieldset>
-
-                <!-- next previous button
-                <footer class="next-prev">
-                    <button class="prev" type="button">
-                        <i class="fa-solid fa-arrow-left"></i>
-                        Previous Question
-                    </button>
-                    <button class="next" id="sub" type="button">
-                        Submit
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </footer> -->
-            </section>
-
-            <!-- section 5 -->
-            <section class="steps">
-
-                <!-- step number -->
-                <!-- <div class="step-number">
-                    Question 5 / 5
-                </div> -->
-
-                <!-- Question -->
-                <h1 class="quiz-question">
-                    Wie bevorzugen Sie es, Ihre Handelsleistung zu verfolgen?
-                </h1>
-
-                <!-- fields -->
-                <fieldset id="step10">
-                    <div class="radio-field  bounce-left">
-                        <input type="radio" name="op10" value="Tägliche Zusammenfassungen.">
-                        <label>Tägliche Zusammenfassungen.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-100">
-                        <input type="radio" name="op10" value="Wöchentliche Berichte.">
-                        <label>Wöchentliche Berichte.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-200">
-                        <input type="radio" name="op10" value="Monatliche Übersichten.">
-                        <label>Monatliche Übersichten.</label>
-                    </div>
-                    <div class="radio-field bounce-left delay-300">
-                        <input type="radio" name="op10" value="Echtzeit-Updates.">
-                        <label>Echtzeit-Updates.</label>
-                    </div>
-                </fieldset>
-
-                <!-- next previous button
-                <footer class="next-prev">
-                    <button class="prev" type="button">
-                        <i class="fa-solid fa-arrow-left"></i>
-                        Previous Question
-                    </button>
-                    <button class="next" id="sub" type="button">
-                        Submit
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </footer> -->
-            </section>
-        </form>
-        <img class="avatar" src="assets/images/avatar.png" alt="">
     </main>
 
-    <div id="error"></div>
-
-            <!-- result -->
-        <div class="loadingresult">
-            <img src="assets/images/loading.gif" alt="loading">
-        </div>
-
-        <div class="main  thankyou-page">
-            <div class="main-inner">
-                <article>
-                    <h1><span>Thank You</span> For Your Time!</h1>
-
-                </article>
-                <style>
-                    #form{
-                        width: 100%;
-                    }
-                </style>
-
-                <div class="custom-form" style="margin: 20px 0 40px;">
-                    <div class="custom-form-slide active">
-                        <p class="p1">Créer votre compte</p>
-                        <p class="p2">
-                            Pour compléter l'inscription, une vérification par téléphone
-                            est requise. Le numéro de téléphone sera utilisé pour
-                            vérifier le compte.
-                        </p>
-                    </div>
-                    <div class="gaff2" id="caff">
-                        <!-- f -->
-                    </div>
-                    <div class="gaff">
-                        <!-- f -->
-                    </div>
-                </div>
-
-                <div class="mb-5 back-home">
-                    <a href="/index.html">Back to Home</a>
-                </div>
-            </div>
-        </div>
-
-        <style>
-            html {
-                scroll-behavior: smooth;
-            }
-
-            .vld-overlay {
-                text-align: center;
-            }
-
-            .form-group,
-            .col-md-6.form-group {
-                width: 100%;
-                max-width: 100%;
-                flex: 0 0 100%;
-                margin-bottom: 10px;
-            }
-
-            #form > button {
-                width: 100%;
-                margin: 0 auto;
-                display: block;
-                background-color: #007bff !important;
-                color: #fff !important;
-                min-height: 48px;
-                font-size: 20px;
-                opacity: 1;
-            }
-
-            form .row {
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-
-            label.control-label,
-            #gaff > form > div:nth-child(11) > div:nth-child(1) {
-                display: none;
-            }
-            .form-control {
-                border: 3px solid #6bfff7 !important;
-                padding: 0px !important;
-                margin-bottom: 0px;
-                text-indent: 10px;
-                width: 100%;
-                min-height: 40px;
-            }
-
-            #form > div:nth-child(12) > div:nth-child(1) {
-                margin-bottom: 0;
-            }
-
-            .checkbox {
-                margin-bottom: 10px;
-                display: none;
-            }
-
-            .checkbox a {
-                position: relative;
-                left: 5px;
-                top: -2px;
-                font-size: 13px;
-            }
-
-            .valid {
-                border: 1px solid green;
-                background-color: white !important;
-            }
-
-            .notvalid {
-                border: 1px solid red !important;
-            }
-
-            .notvalidphone {
-                background-color: rgb(253, 164, 164) !important;
-                border: 1px solid red !important;
-            }
-
-            .initial {
-                border: 1px solid gray !important;
-            }
-
-            @media (max-width: 1050px) {
-                .article__precontent,
-                .article__news {
-                    display: block;
-                }
-            }
-        </style>
-
-        <script>
-            var formConf = { pass: false, btnTxt: "Register Now" };
-            function generatePassword() {
-                var length = 5,
-                    charset =
-                        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
-                    retVal = "";
-                for (var i = 0, n = charset.length; i < length; ++i) {
-                    retVal += charset.charAt(Math.floor(Math.random() * n));
-                }
-                return retVal + "eG6";
-            }
-
-            document.addEventListener("build", function () {
-                if (formConf.btnTxt !== undefined) {
-                    jQuery("button.btn.btn-danger.btn-lg.tradeBtn").text(
-                        formConf.btnTxt
-                    );
-                }
-
-                jQuery("input.form-control.bfh-password")
-                    .css({ display: "none" })
-                    .attr("value", generatePassword());
-                jQuery(".bfh-phone").focus(function () {
-                    jQuery(this).trigger("change");
-                });
-                jQuery(".bfh-phone").attr("autocomplete", "off");
-            });
-        </script>
-        <script>
-            gvars = {
-                gi: 86,
-                ci: 1,
-                wl: 17,
-                ap: 0,
-                ae: 0,
-                lg: "fr",
-                ai: 2958156
-            };
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.min.js"></script>
-        <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.6.0/webcomponents-loader.js"></script>
-        <script src="form.js"></script>
-
-    <!-- bootstrap 5 -->
-    <script src="assets/js/Bootstrap/bootstrap.min.js"></script>
-
-    <!-- jQuery -->
-    <script src="assets/js/jQuery/jquery-3.6.3.min.js"></script>
-
-    <!-- <Thankyou JS -->
-        <script src="assets/js/thankyou.js"></script>
-
-    <!-- Custom js -->
-    <script src="assets/js/custom.js"></script>
     
 </body>
 </html>
